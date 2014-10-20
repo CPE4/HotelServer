@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F38C8E3A-0E45-4D31-9B33-9C996DEDE80C}</ProjectGuid>
+    <ProjectGuid>{AEEF2D1B-9ECE-4F6D-A986-A29D0289CC25}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HotelServer.Tests</RootNamespace>
@@ -103,7 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HotelServer\HotelServer.csproj">
-      <Project>{24CE18AA-9E3A-41FC-98B7-8BE3D885A773}</Project>
+      <Project>{157913F9-8ABA-4A76-A4E7-F55A4A8E6AEA}</Project>
       <Name>HotelServer</Name>
     </ProjectReference>
   </ItemGroup>
