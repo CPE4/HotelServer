@@ -14,7 +14,7 @@ namespace HotelServer.Controllers
 {
     public class AbonnesController : ApiController
     {
-        private HotelEntities db = new HotelEntities();
+        private AbonneHotelEntities db = new AbonneHotelEntities();
 
         // GET: api/Abonnes
         public IQueryable<vAbonne> GetvAbonne()

@@ -109,15 +109,33 @@ FROM [dbo].[vAbonne] AS [vAbonne]</DefiningQuery>
           <Property Name="telephone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="aeroport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="HotelEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AbonneHotelEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="vAbonne" EntityType="Self.vAbonne" />
+          <FunctionImport Name="Abonne_Insert" ReturnType="Collection(Decimal)">
+            <Parameter Name="pseudo" Mode="In" Type="String" />
+            <Parameter Name="motdepasse" Mode="In" Type="String" />
+            <Parameter Name="mail" Mode="In" Type="String" />
+            <Parameter Name="nom" Mode="In" Type="String" />
+            <Parameter Name="prenom" Mode="In" Type="String" />
+            <Parameter Name="adrLigne1" Mode="In" Type="String" />
+            <Parameter Name="adrLigne2" Mode="In" Type="String" />
+            <Parameter Name="codePostal" Mode="In" Type="String" />
+            <Parameter Name="ville" Mode="In" Type="String" />
+            <Parameter Name="etat" Mode="In" Type="String" />
+            <Parameter Name="idPays" Mode="In" Type="Decimal" />
+            <Parameter Name="latitude" Mode="In" Type="Single" />
+            <Parameter Name="longitude" Mode="In" Type="Single" />
+            <Parameter Name="indicatif" Mode="In" Type="Decimal" />
+            <Parameter Name="telephone" Mode="In" Type="String" />
+            <Parameter Name="aeroport" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HotelModelStoreContainer" CdmEntityContainer="HotelEntities">
+        <EntityContainerMapping StorageEntityContainer="HotelModelStoreContainer" CdmEntityContainer="AbonneHotelEntities">
           <EntitySetMapping Name="vAbonne">
             <EntityTypeMapping TypeName="HotelModel.vAbonne">
               <MappingFragment StoreEntitySet="vAbonne">
@@ -164,6 +182,7 @@ FROM [dbo].[vAbonne] AS [vAbonne]</DefiningQuery>
               </ModificationFunctionMapping>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Abonne_Insert" FunctionName="HotelModel.Store.Abonne_Insert" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
