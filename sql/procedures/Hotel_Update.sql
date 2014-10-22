@@ -1,10 +1,13 @@
 USE [Hotel]
 GO
-/****** Object:  StoredProcedure [dbo].[SPAbonne_Update]    Script Date: 22/10/2014 11:03:08 ******/
+
+/****** Object:  StoredProcedure [dbo].[Hotel_Update]    Script Date: 22/10/2014 12:39:19 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 CREATE PROCEDURE [dbo].[Hotel_Update](
 	@id numeric(6,0),
@@ -33,21 +36,23 @@ BEGIN
 	SET
 		[PRX_ID]=@idPrix,
 		[HOT_NOM]=@nom,
-		[HOT_DESCRIPTION]
-		[HOT_ADRLIGNE1]
-        [HOT_ADRLIGNE2]
- 	    [HOT_CP]
-		[HOT_VILLE]
-		[HOT_ETAT]
-		[PAY_ID]
-		[HOT_LATITUDE]
-		[HOT_LONGITUDE]
-		[IND_INDICATIF]
-		[CAT_NBETOILES]
-		[HOT_TEL]
-		[HOT_MEL]
-		[HOT_SITEWEB]
-		[HOT_NBCHAMBRES]
+		[HOT_DESCRIPTION]=@description,
+		[HOT_ADRLIGNE1]=@adrLigne1,
+        [HOT_ADRLIGNE2]=@adrLigne2,
+ 	    [HOT_CP]=@codePostal,
+		[HOT_VILLE]=@ville,
+		[HOT_ETAT]=@etat,
+		[PAY_ID]=@idPays,
+		[HOT_LATITUDE]=@latitude,
+		[HOT_LONGITUDE]=@longitude,
+		[IND_INDICATIF]=@indicatif,
+		[CAT_NBETOILES]=@nbEtoiles,
+		[HOT_TEL]=@telephone,
+		[HOT_MEL]=@mail,
+		[HOT_SITEWEB]=@siteWeb,
+		[HOT_NBCHAMBRES]=@nbChambres
 	WHERE
 		[HOT_ID]=@id
 END
+GO
+
