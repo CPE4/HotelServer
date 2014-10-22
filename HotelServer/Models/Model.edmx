@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'Hotel.dbo.vAbonne' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vAbonne">
@@ -43,45 +43,6 @@ avertissement 6002: La table/vue 'Hotel.dbo.vAbonne' n'a pas de clé primaire d�
           <Property Name="aeroport" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
-avertissement 6002: La table/vue 'Hotel.dbo.vHotel' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
-        <EntityType Name="vHotel">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="idPrix" />
-            <PropertyRef Name="idHotelier" />
-            <PropertyRef Name="nom" />
-            <PropertyRef Name="adrLigne1" />
-            <PropertyRef Name="ville" />
-            <PropertyRef Name="codePostal" />
-            <PropertyRef Name="idPays" />
-            <PropertyRef Name="latitude" />
-            <PropertyRef Name="indicatif" />
-            <PropertyRef Name="longitude" />
-            <PropertyRef Name="nbEtoiles" />
-            <PropertyRef Name="telephone" />
-            <PropertyRef Name="mail" />
-          </Key>
-          <Property Name="id" Type="numeric" Precision="6" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idPrix" Type="numeric" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="idHotelier" Type="numeric" Precision="6" Scale="0" Nullable="false" />
-          <Property Name="nom" Type="varchar" MaxLength="80" Nullable="false" />
-          <Property Name="description" Type="varchar" MaxLength="500" />
-          <Property Name="adrLigne1" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="adrLigne2" Type="varchar" MaxLength="100" />
-          <Property Name="etat" Type="varchar" MaxLength="50" />
-          <Property Name="ville" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="codePostal" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="idPays" Type="numeric" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="latitude" Type="real" Nullable="false" />
-          <Property Name="indicatif" Type="numeric" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="longitude" Type="real" Nullable="false" />
-          <Property Name="nbEtoiles" Type="numeric" Precision="1" Scale="0" Nullable="false" />
-          <Property Name="telephone" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="mail" Type="varchar" MaxLength="80" Nullable="false" />
-          <Property Name="siteWeb" Type="varchar" MaxLength="100" />
-          <Property Name="nbChambres" Type="numeric" Precision="3" Scale="0" />
-        </EntityType>
-        <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'Hotel.dbo.vHotelier' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="vHotelier">
           <Key>
@@ -106,6 +67,15 @@ avertissement 6002: La table/vue 'Hotel.dbo.vHotelier' n'a pas de clé primaire 
           <Property Name="adrLigne2" Type="varchar" MaxLength="100" />
           <Property Name="adrLigne1" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="prenom" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Hotel.dbo.vPays' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vPays">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id" Type="numeric" Precision="4" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <Function Name="Abonne_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="pseudo" Type="varchar" Mode="In" />
@@ -213,29 +183,6 @@ avertissement 6002: La table/vue 'Hotel.dbo.vHotelier' n'a pas de clé primaire 
     [vAbonne].[aeroport] AS [aeroport]
     FROM [dbo].[vAbonne] AS [vAbonne]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vHotel" EntityType="Self.vHotel" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vHotel].[id] AS [id], 
-    [vHotel].[idPrix] AS [idPrix], 
-    [vHotel].[idHotelier] AS [idHotelier], 
-    [vHotel].[nom] AS [nom], 
-    [vHotel].[description] AS [description], 
-    [vHotel].[adrLigne1] AS [adrLigne1], 
-    [vHotel].[adrLigne2] AS [adrLigne2], 
-    [vHotel].[etat] AS [etat], 
-    [vHotel].[ville] AS [ville], 
-    [vHotel].[codePostal] AS [codePostal], 
-    [vHotel].[idPays] AS [idPays], 
-    [vHotel].[latitude] AS [latitude], 
-    [vHotel].[indicatif] AS [indicatif], 
-    [vHotel].[longitude] AS [longitude], 
-    [vHotel].[nbEtoiles] AS [nbEtoiles], 
-    [vHotel].[telephone] AS [telephone], 
-    [vHotel].[mail] AS [mail], 
-    [vHotel].[siteWeb] AS [siteWeb], 
-    [vHotel].[nbChambres] AS [nbChambres]
-    FROM [dbo].[vHotel] AS [vHotel]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="vHotelier" EntityType="Self.vHotelier" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vHotelier].[id] AS [id], 
@@ -251,9 +198,14 @@ avertissement 6002: La table/vue 'Hotel.dbo.vHotelier' n'a pas de clé primaire 
     [vHotelier].[prenom] AS [prenom]
     FROM [dbo].[vHotelier] AS [vHotelier]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vPays" EntityType="Self.vPays" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPays].[nom] AS [nom], 
+    [vPays].[id] AS [id]
+    FROM [dbo].[vPays] AS [vPays]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -441,7 +393,15 @@ avertissement 6002: La table/vue 'Hotel.dbo.vHotelier' n'a pas de clé primaire 
             <Parameter Name="adrLigne1" Mode="In" Type="String" />
             <Parameter Name="prenom" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="vPays" EntityType="HotelModel.vPays" />
         </EntityContainer>
+        <EntityType Name="vPays">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Decimal" Nullable="false" Precision="4" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -495,29 +455,6 @@ avertissement 6002: La table/vue 'Hotel.dbo.vHotelier' n'a pas de clé primaire 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vHotel">
-            <EntityTypeMapping TypeName="HotelModel.vHotel">
-              <MappingFragment StoreEntitySet="vHotel">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idPrix" ColumnName="idPrix" />
-                <ScalarProperty Name="idHotelier" ColumnName="idHotelier" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="adrLigne1" ColumnName="adrLigne1" />
-                <ScalarProperty Name="adrLigne2" ColumnName="adrLigne2" />
-                <ScalarProperty Name="etat" ColumnName="etat" />
-                <ScalarProperty Name="ville" ColumnName="ville" />
-                <ScalarProperty Name="codePostal" ColumnName="codePostal" />
-                <ScalarProperty Name="idPays" ColumnName="idPays" />
-                <ScalarProperty Name="latitude" ColumnName="latitude" />
-                <ScalarProperty Name="indicatif" ColumnName="indicatif" />
-                <ScalarProperty Name="longitude" ColumnName="longitude" />
-                <ScalarProperty Name="nbEtoiles" ColumnName="nbEtoiles" />
-                <ScalarProperty Name="telephone" ColumnName="telephone" />
-                <ScalarProperty Name="mail" ColumnName="mail" />
-                <ScalarProperty Name="siteWeb" ColumnName="siteWeb" />
-                <ScalarProperty Name="nbChambres" ColumnName="nbChambres" />
-              </MappingFragment>
-            </EntityTypeMapping>
             <EntityTypeMapping TypeName="HotelModel.vHotel">
               <ModificationFunctionMapping>
                 <InsertFunction FunctionName="HotelModel.Store.Hotel_Insert">
@@ -617,6 +554,14 @@ avertissement 6002: La table/vue 'Hotel.dbo.vHotelier' n'a pas de clé primaire 
           <FunctionImportMapping FunctionImportName="Hotel_Update" FunctionName="HotelModel.Store.Hotel_Update" />
           <FunctionImportMapping FunctionImportName="Hotelier_Insert" FunctionName="HotelModel.Store.Hotelier_Insert" />
           <FunctionImportMapping FunctionImportName="Hotelier_Update" FunctionName="HotelModel.Store.Hotelier_Update" />
+          <EntitySetMapping Name="vPays">
+            <EntityTypeMapping TypeName="HotelModel.vPays">
+              <MappingFragment StoreEntitySet="vPays">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

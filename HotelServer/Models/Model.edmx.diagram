@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="HotelModel.vAbonne" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HotelModel.vHotel" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HotelModel.vHotelier" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelModel.vPays" Width="1.5" PointX="7.75" PointY="1.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
