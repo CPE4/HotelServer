@@ -1,13 +1,8 @@
 USE [Hotel]
 GO
-/****** Object:  StoredProcedure [dbo].[SPAbonne_Update]    Script Date: 22/10/2014 11:03:08 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 
 
-ALTER PROCEDURE [dbo].[Hotelier_Update](
+CREATE PROCEDURE [dbo].[Hotelier_Update](
 	@id numeric(6,0),
     @mail varchar(80),
     @motdepasse varchar(40),
@@ -26,8 +21,8 @@ BEGIN
 	SET
 		[HTR_MEL]=@mail,
 		[HTR_MOTPASSE]=@motdepasse,
-		[HTR_MEL]=@nom,
-		[HTR_NOM]=@idPays,
+		[HTR_NOM]=@nom,
+		[PAY_ID]=@idPays,
 		[HTR_ETAT]=@etat,
 		[HTR_VILLE]=@ville,
 		[HTR_CP]=@codePostal,
