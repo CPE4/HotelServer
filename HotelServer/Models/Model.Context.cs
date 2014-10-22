@@ -30,6 +30,7 @@ namespace HotelServer.Models
         public virtual DbSet<vAbonne> vAbonne { get; set; }
         public virtual DbSet<vHotel> vHotel { get; set; }
         public virtual DbSet<vHotelier> vHotelier { get; set; }
+        public virtual DbSet<vPays> vPays { get; set; }
     
         public virtual ObjectResult<Nullable<decimal>> Abonne_Insert(string pseudo, string motdepasse, string mail, string nom, string prenom, string adrLigne1, string adrLigne2, string codePostal, string ville, string etat, Nullable<decimal> idPays, Nullable<float> latitude, Nullable<float> longitude, Nullable<decimal> indicatif, string telephone, string aeroport)
         {
