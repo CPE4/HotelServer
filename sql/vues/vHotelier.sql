@@ -1,7 +1,7 @@
 USE [Hotel]
 GO
 
-/****** Object:  View [dbo].[vHotelier]    Script Date: 20/10/2014 14:03:53 ******/
+/****** Object:  View [dbo].[vHotelier]    Script Date: 22/10/2014 10:04:39 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -10,9 +10,9 @@ GO
 
 CREATE VIEW [dbo].[vHotelier]
 AS
-SELECT HTR_ID AS id, HTR_MEL AS mail, HTR_MOTPASSE AS motdepasse, HTR_NOM AS nom, HTR_PRENOM AS prenom, HTR_ADRLIGNE1 AS adrLigne1, HTR_ADRLIGNE2 AS adrLigne2, HTR_CP AS codePostal, HTR_VILLE AS ville, HTR_ETAT AS etat, 
-             PAY_ID AS idPays
-FROM   dbo.T_E_HOTELIER_HTR
+SELECT        HTR_ID AS id, HTR_MEL AS mail, HTR_MOTPASSE AS motdepasse, HTR_NOM AS nom, PAY_ID AS idPays, HTR_ETAT AS etat, HTR_VILLE AS ville, HTR_CP AS codePostal, HTR_ADRLIGNE2 AS adrLigne2, 
+                         HTR_ADRLIGNE1 AS adrLigne1, HTR_PRENOM AS prenom
+FROM            dbo.T_E_HOTELIER_HTR
 
 GO
 
@@ -21,7 +21,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[40] 4[27] 2[13] 3) )"
+         Configuration = "(H (1[27] 4[34] 2[20] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -89,13 +89,13 @@ Begin DesignProperties =
       Begin Tables = 
          Begin Table = "T_E_HOTELIER_HTR"
             Begin Extent = 
-               Top = 9
-               Left = 57
-               Bottom = 402
-               Right = 339
+               Top = 6
+               Left = 38
+               Bottom = 136
+               Right = 247
             End
             DisplayFlags = 280
-            TopColumn = 0
+            TopColumn = 5
          End
       End
    End
@@ -107,7 +107,7 @@ Begin DesignProperties =
    End
    Begin CriteriaPane = 
       Begin ColumnWidths = 11
-         Column = 1440
+         Column = 2325
          Alias = 900
          Table = 1170
          Output = 720
@@ -128,3 +128,4 @@ GO
 
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'vHotelier'
 GO
+
