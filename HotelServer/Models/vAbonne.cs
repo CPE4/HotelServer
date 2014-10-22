@@ -11,25 +11,42 @@ namespace HotelServer.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class vAbonne
     {
         public decimal id { get; set; }
+        [Required(ErrorMessage = "Le pseudo est requis")]
         public string pseudo { get; set; }
+        [Required(ErrorMessage = "Le mot de passe est requis")]
         public string motdepasse { get; set; }
+        [DataType(DataType.EmailAddress, ErrorMessage = "L'adresse email doit être valide")]
         public string mail { get; set; }
+        [Required(ErrorMessage = "Le nom est requis")]
         public string nom { get; set; }
+        [Required(ErrorMessage = "Le prenom est requis")]
         public string prenom { get; set; }
+        [Required(ErrorMessage = "L'adresse est requise")]
         public string adrLigne1 { get; set; }
+        [Required(ErrorMessage = "L'adresse est requise")]
         public string adrLigne2 { get; set; }
+        [Required(ErrorMessage = "Le code postal est requis")]
         public string codePostal { get; set; }
+        [Required(ErrorMessage = "La ville est requise")]
         public string ville { get; set; }
+        [Required(ErrorMessage = "L'etat est requis")]
         public string etat { get; set; }
+        [Required(ErrorMessage = "Le pays est requis")]
         public decimal idPays { get; set; }
+        [Required(ErrorMessage = "La latitude est requise")]
         public float latitude { get; set; }
+        [Required(ErrorMessage = "La longitude est requise")]
         public float longitude { get; set; }
+        [Required(ErrorMessage = "L'indicatif est requis")]
         public decimal indicatif { get; set; }
+        [Required(ErrorMessage = "Le téléphone est requis")]
         public string telephone { get; set; }
+        [Required(ErrorMessage = "L'aeroport est requis")]
         public string aeroport { get; set; }
     }
 }
