@@ -12,17 +12,17 @@ using HotelServer.Models;
 
 namespace HotelServer.Controllers
 {
-    public class vPaysController : ApiController
+    public class PaysController : ApiController
     {
         private HotelEntities db = new HotelEntities();
 
-        // GET: api/vPays
+        // GET: api/Pays
         public IQueryable<vPays> GetvPays()
         {
             return db.vPays;
         }
 
-        // GET: api/vPays/5
+        // GET: api/Pays/5
         [ResponseType(typeof(vPays))]
         public IHttpActionResult GetvPays(decimal id)
         {
@@ -35,7 +35,7 @@ namespace HotelServer.Controllers
             return Ok(vPays);
         }
 
-        // PUT: api/vPays/5
+        // PUT: api/Pays/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutvPays(decimal id, vPays vPays)
         {
@@ -70,7 +70,7 @@ namespace HotelServer.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/vPays
+        // POST: api/Pays
         [ResponseType(typeof(vPays))]
         public IHttpActionResult PostvPays(vPays vPays)
         {
@@ -85,7 +85,7 @@ namespace HotelServer.Controllers
             return CreatedAtRoute("DefaultApi", new { id = vPays.id }, vPays);
         }
 
-        // DELETE: api/vPays/5
+        // DELETE: api/Pays/5
         [ResponseType(typeof(vPays))]
         public IHttpActionResult DeletevPays(decimal id)
         {
