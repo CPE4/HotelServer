@@ -59,7 +59,6 @@ avertissement 6002: La table/vue 'Hotel.dbo.vAbonne' n'a pas de cl√© primaire d√
           <Parameter Name="indicatif" Type="numeric" Mode="In" />
           <Parameter Name="telephone" Type="varchar" Mode="In" />
           <Parameter Name="aeroport" Type="varchar" Mode="In" />
-          <Parameter Name="id" Type="int" Mode="InOut" />
         </Function>
         <EntityContainer Name="HotelModelStoreContainer">
           <EntitySet Name="vAbonne" EntityType="Self.vAbonne" store:Type="Views" store:Schema="dbo">
@@ -144,7 +143,6 @@ FROM [dbo].[vAbonne] AS [vAbonne]</DefiningQuery>
             <EntityTypeMapping TypeName="HotelModel.vAbonne">
               <ModificationFunctionMapping>
                 <InsertFunction FunctionName="HotelModel.Store.Abonne_Insert">
-                  <ScalarProperty Name="id" ParameterName="id" />
                   <ScalarProperty Name="aeroport" ParameterName="aeroport" />
                   <ScalarProperty Name="telephone" ParameterName="telephone" />
                   <ScalarProperty Name="indicatif" ParameterName="indicatif" />
@@ -161,6 +159,7 @@ FROM [dbo].[vAbonne] AS [vAbonne]</DefiningQuery>
                   <ScalarProperty Name="mail" ParameterName="mail" />
                   <ScalarProperty Name="motdepasse" ParameterName="motdepasse" />
                   <ScalarProperty Name="pseudo" ParameterName="pseudo" />
+                  <ResultBinding Name="id" ColumnName="id" />
                 </InsertFunction>
               </ModificationFunctionMapping>
             </EntityTypeMapping>

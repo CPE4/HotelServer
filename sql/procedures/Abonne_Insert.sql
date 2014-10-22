@@ -14,12 +14,10 @@ CREATE PROCEDURE Abonne_Insert(
     @longitude real,
     @indicatif numeric(4,0),
     @telephone varchar(15),
-    @aeroport varchar(50),
-	@id int OUTPUT)
+    @aeroport varchar(50)
+)
 AS
 BEGIN	
-	DECLARE @CODEERREUR int=0
-
 	INSERT INTO [dbo].[T_E_ABONNE_ABO]
 			   ([ABO_PSEUDO]
 			   ,[ABO_MOTPASSE]
@@ -55,14 +53,6 @@ BEGIN
 				@telephone,
 				@aeroport)
 
-	SET @CODEERREUR = @@ERROR /*Récupération du numéro d'erreur via la variable d'environnement @@ERROR*/
-	
-	IF @CODEERREUR<>0
-		SET @id=-1
-	ELSE
-		BEGIN
-			/*Récupération de l'identifiant*/
-			SELECT @id=@@IDENTITY;
-		END
+SELECT SCOPE_IDENTITY() AS id
 END
 GO
