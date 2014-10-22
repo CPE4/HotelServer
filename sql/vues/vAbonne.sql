@@ -1,18 +1,20 @@
 USE [Hotel]
 GO
 
-/****** Object:  View [dbo].[vAbonne]    Script Date: 20/10/2014 14:05:25 ******/
+/****** Object:  View [dbo].[vAbonne]    Script Date: 22/10/2014 09:43:12 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
+
 CREATE VIEW [dbo].[vAbonne]
 AS
 SELECT ABO_ID AS id, ABO_PSEUDO AS pseudo, ABO_MOTPASSE AS motdepasse, ABO_MEL AS mail, ABO_NOM AS nom, ABO_PRENOM AS prenom, ABO_ADRLIGNE1 AS adrLigne1, ABO_ADRLIGNE2 AS adrLigne2, ABO_CP AS codePostal, ABO_VILLE AS ville, 
              ABO_ETAT AS etat, PAY_ID AS idPays, ABO_LATITUDE AS latitude, ABO_LONGITUDE AS longitude, IND_INDICATIF AS indicatif, ABO_TEL AS telephone, ABO_AEROPORT AS aeroport
 FROM   dbo.T_E_ABONNE_ABO
+
 
 GO
 
@@ -128,3 +130,4 @@ GO
 
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'vAbonne'
 GO
+

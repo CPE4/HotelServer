@@ -1,4 +1,14 @@
-CREATE PROCEDURE Abonne_Insert(
+USE [Hotel]
+GO
+
+/****** Object:  StoredProcedure [dbo].[Abonne_Insert]    Script Date: 22/10/2014 09:42:40 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[Abonne_Insert](
 	@pseudo varchar(20),
     @motdepasse varchar(40),
     @mail varchar(80),
@@ -55,4 +65,6 @@ BEGIN
 
 SELECT SCOPE_IDENTITY() AS id
 END
+
 GO
+
