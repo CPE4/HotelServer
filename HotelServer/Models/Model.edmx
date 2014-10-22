@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Hotel.dbo.vAbonne' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vAbonne">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="pseudo" />
+            <PropertyRef Name="motdepasse" />
+            <PropertyRef Name="mail" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="prenom" />
+            <PropertyRef Name="adrLigne1" />
+            <PropertyRef Name="codePostal" />
+            <PropertyRef Name="ville" />
+            <PropertyRef Name="idPays" />
+            <PropertyRef Name="latitude" />
+            <PropertyRef Name="longitude" />
+            <PropertyRef Name="indicatif" />
+            <PropertyRef Name="telephone" />
+          </Key>
+          <Property Name="id" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pseudo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="motdepasse" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prenom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="adrLigne1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="adrLigne2" Type="varchar" MaxLength="100" />
+          <Property Name="codePostal" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ville" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="etat" Type="varchar" MaxLength="50" />
+          <Property Name="idPays" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="latitude" Type="real" Nullable="false" />
+          <Property Name="longitude" Type="real" Nullable="false" />
+          <Property Name="indicatif" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="telephone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="aeroport" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Hotel.dbo.vHotel' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vHotel">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="idPrix" />
+            <PropertyRef Name="idHotelier" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="adrLigne1" />
+            <PropertyRef Name="ville" />
+            <PropertyRef Name="codePostal" />
+            <PropertyRef Name="idPays" />
+            <PropertyRef Name="latitude" />
+            <PropertyRef Name="indicatif" />
+            <PropertyRef Name="longitude" />
+            <PropertyRef Name="nbEtoiles" />
+            <PropertyRef Name="telephone" />
+            <PropertyRef Name="mail" />
+          </Key>
+          <Property Name="id" Type="numeric" Precision="6" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPrix" Type="numeric" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="idHotelier" Type="numeric" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
+          <Property Name="adrLigne1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="adrLigne2" Type="varchar" MaxLength="100" />
+          <Property Name="etat" Type="varchar" MaxLength="50" />
+          <Property Name="ville" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="codePostal" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="idPays" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="latitude" Type="real" Nullable="false" />
+          <Property Name="indicatif" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="longitude" Type="real" Nullable="false" />
+          <Property Name="nbEtoiles" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="telephone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="siteWeb" Type="varchar" MaxLength="100" />
+          <Property Name="nbChambres" Type="numeric" Precision="3" Scale="0" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Hotel.dbo.vHotelier' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="vHotelier">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="mail" />
+            <PropertyRef Name="motdepasse" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="idPays" />
+            <PropertyRef Name="ville" />
+            <PropertyRef Name="codePostal" />
+            <PropertyRef Name="adrLigne1" />
+            <PropertyRef Name="prenom" />
+          </Key>
+          <Property Name="id" Type="numeric" Precision="6" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="motdepasse" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idPays" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="etat" Type="varchar" MaxLength="50" />
+          <Property Name="ville" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="codePostal" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="adrLigne2" Type="varchar" MaxLength="100" />
+          <Property Name="adrLigne1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="prenom" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Function Name="Abonne_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pseudo" Type="varchar" Mode="In" />
+          <Parameter Name="motdepasse" Type="varchar" Mode="In" />
+          <Parameter Name="mail" Type="varchar" Mode="In" />
+          <Parameter Name="nom" Type="varchar" Mode="In" />
+          <Parameter Name="prenom" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne1" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne2" Type="varchar" Mode="In" />
+          <Parameter Name="codePostal" Type="varchar" Mode="In" />
+          <Parameter Name="ville" Type="varchar" Mode="In" />
+          <Parameter Name="etat" Type="varchar" Mode="In" />
+          <Parameter Name="idPays" Type="numeric" Mode="In" />
+          <Parameter Name="latitude" Type="real" Mode="In" />
+          <Parameter Name="longitude" Type="real" Mode="In" />
+          <Parameter Name="indicatif" Type="numeric" Mode="In" />
+          <Parameter Name="telephone" Type="varchar" Mode="In" />
+          <Parameter Name="aeroport" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Hotel_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPrix" Type="numeric" Mode="In" />
+          <Parameter Name="idHotelier" Type="numeric" Mode="In" />
+          <Parameter Name="nom" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne1" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne2" Type="varchar" Mode="In" />
+          <Parameter Name="etat" Type="varchar" Mode="In" />
+          <Parameter Name="ville" Type="varchar" Mode="In" />
+          <Parameter Name="codePostal" Type="varchar" Mode="In" />
+          <Parameter Name="idPays" Type="numeric" Mode="In" />
+          <Parameter Name="latitude" Type="real" Mode="In" />
+          <Parameter Name="indicatif" Type="numeric" Mode="In" />
+          <Parameter Name="longitude" Type="real" Mode="In" />
+          <Parameter Name="nbEtoiles" Type="numeric" Mode="In" />
+          <Parameter Name="telephone" Type="varchar" Mode="In" />
+          <Parameter Name="mail" Type="varchar" Mode="In" />
+          <Parameter Name="siteWeb" Type="varchar" Mode="In" />
+          <Parameter Name="nbChambres" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Hotel_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="numeric" Mode="In" />
+          <Parameter Name="idPrix" Type="numeric" Mode="In" />
+          <Parameter Name="idHotelier" Type="numeric" Mode="In" />
+          <Parameter Name="nom" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne1" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne2" Type="varchar" Mode="In" />
+          <Parameter Name="etat" Type="varchar" Mode="In" />
+          <Parameter Name="ville" Type="varchar" Mode="In" />
+          <Parameter Name="codePostal" Type="varchar" Mode="In" />
+          <Parameter Name="idPays" Type="numeric" Mode="In" />
+          <Parameter Name="latitude" Type="real" Mode="In" />
+          <Parameter Name="indicatif" Type="numeric" Mode="In" />
+          <Parameter Name="longitude" Type="real" Mode="In" />
+          <Parameter Name="nbEtoiles" Type="numeric" Mode="In" />
+          <Parameter Name="telephone" Type="varchar" Mode="In" />
+          <Parameter Name="mail" Type="varchar" Mode="In" />
+          <Parameter Name="siteWeb" Type="varchar" Mode="In" />
+          <Parameter Name="nbChambres" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Hotelier_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mail" Type="varchar" Mode="In" />
+          <Parameter Name="motdepasse" Type="varchar" Mode="In" />
+          <Parameter Name="nom" Type="varchar" Mode="In" />
+          <Parameter Name="idPays" Type="numeric" Mode="In" />
+          <Parameter Name="etat" Type="varchar" Mode="In" />
+          <Parameter Name="ville" Type="varchar" Mode="In" />
+          <Parameter Name="codePostal" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne2" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne1" Type="varchar" Mode="In" />
+          <Parameter Name="prenom" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Hotelier_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="numeric" Mode="In" />
+          <Parameter Name="mail" Type="varchar" Mode="In" />
+          <Parameter Name="motdepasse" Type="varchar" Mode="In" />
+          <Parameter Name="nom" Type="varchar" Mode="In" />
+          <Parameter Name="idPays" Type="numeric" Mode="In" />
+          <Parameter Name="etat" Type="varchar" Mode="In" />
+          <Parameter Name="ville" Type="varchar" Mode="In" />
+          <Parameter Name="codePostal" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne2" Type="varchar" Mode="In" />
+          <Parameter Name="adrLigne1" Type="varchar" Mode="In" />
+          <Parameter Name="prenom" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="HotelModelStoreContainer">
+          <EntitySet Name="vAbonne" EntityType="Self.vAbonne" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vAbonne].[id] AS [id], 
+    [vAbonne].[pseudo] AS [pseudo], 
+    [vAbonne].[motdepasse] AS [motdepasse], 
+    [vAbonne].[mail] AS [mail], 
+    [vAbonne].[nom] AS [nom], 
+    [vAbonne].[prenom] AS [prenom], 
+    [vAbonne].[adrLigne1] AS [adrLigne1], 
+    [vAbonne].[adrLigne2] AS [adrLigne2], 
+    [vAbonne].[codePostal] AS [codePostal], 
+    [vAbonne].[ville] AS [ville], 
+    [vAbonne].[etat] AS [etat], 
+    [vAbonne].[idPays] AS [idPays], 
+    [vAbonne].[latitude] AS [latitude], 
+    [vAbonne].[longitude] AS [longitude], 
+    [vAbonne].[indicatif] AS [indicatif], 
+    [vAbonne].[telephone] AS [telephone], 
+    [vAbonne].[aeroport] AS [aeroport]
+    FROM [dbo].[vAbonne] AS [vAbonne]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vHotel" EntityType="Self.vHotel" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vHotel].[id] AS [id], 
+    [vHotel].[idPrix] AS [idPrix], 
+    [vHotel].[idHotelier] AS [idHotelier], 
+    [vHotel].[nom] AS [nom], 
+    [vHotel].[description] AS [description], 
+    [vHotel].[adrLigne1] AS [adrLigne1], 
+    [vHotel].[adrLigne2] AS [adrLigne2], 
+    [vHotel].[etat] AS [etat], 
+    [vHotel].[ville] AS [ville], 
+    [vHotel].[codePostal] AS [codePostal], 
+    [vHotel].[idPays] AS [idPays], 
+    [vHotel].[latitude] AS [latitude], 
+    [vHotel].[indicatif] AS [indicatif], 
+    [vHotel].[longitude] AS [longitude], 
+    [vHotel].[nbEtoiles] AS [nbEtoiles], 
+    [vHotel].[telephone] AS [telephone], 
+    [vHotel].[mail] AS [mail], 
+    [vHotel].[siteWeb] AS [siteWeb], 
+    [vHotel].[nbChambres] AS [nbChambres]
+    FROM [dbo].[vHotel] AS [vHotel]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vHotelier" EntityType="Self.vHotelier" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vHotelier].[id] AS [id], 
+    [vHotelier].[mail] AS [mail], 
+    [vHotelier].[motdepasse] AS [motdepasse], 
+    [vHotelier].[nom] AS [nom], 
+    [vHotelier].[idPays] AS [idPays], 
+    [vHotelier].[etat] AS [etat], 
+    [vHotelier].[ville] AS [ville], 
+    [vHotelier].[codePostal] AS [codePostal], 
+    [vHotelier].[adrLigne2] AS [adrLigne2], 
+    [vHotelier].[adrLigne1] AS [adrLigne1], 
+    [vHotelier].[prenom] AS [prenom]
+    FROM [dbo].[vHotelier] AS [vHotelier]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="vAbonne">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="pseudo" />
+            <PropertyRef Name="motdepasse" />
+            <PropertyRef Name="mail" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="prenom" />
+            <PropertyRef Name="adrLigne1" />
+            <PropertyRef Name="codePostal" />
+            <PropertyRef Name="ville" />
+            <PropertyRef Name="idPays" />
+            <PropertyRef Name="latitude" />
+            <PropertyRef Name="longitude" />
+            <PropertyRef Name="indicatif" />
+            <PropertyRef Name="telephone" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="10" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pseudo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="motdepasse" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adrLigne1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adrLigne2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="codePostal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="etat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idPays" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="latitude" Type="Single" Nullable="false" />
+          <Property Name="longitude" Type="Single" Nullable="false" />
+          <Property Name="indicatif" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="telephone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aeroport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vHotel">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="idPrix" />
+            <PropertyRef Name="idHotelier" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="adrLigne1" />
+            <PropertyRef Name="ville" />
+            <PropertyRef Name="codePostal" />
+            <PropertyRef Name="idPays" />
+            <PropertyRef Name="latitude" />
+            <PropertyRef Name="indicatif" />
+            <PropertyRef Name="longitude" />
+            <PropertyRef Name="nbEtoiles" />
+            <PropertyRef Name="telephone" />
+            <PropertyRef Name="mail" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="6" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPrix" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="idHotelier" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="nom" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="adrLigne1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adrLigne2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="etat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codePostal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idPays" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="latitude" Type="Single" Nullable="false" />
+          <Property Name="indicatif" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="longitude" Type="Single" Nullable="false" />
+          <Property Name="nbEtoiles" Type="Decimal" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="telephone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="siteWeb" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nbChambres" Type="Decimal" Precision="3" Scale="0" />
+        </EntityType>
+        <EntityType Name="vHotelier">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="mail" />
+            <PropertyRef Name="motdepasse" />
+            <PropertyRef Name="nom" />
+            <PropertyRef Name="idPays" />
+            <PropertyRef Name="ville" />
+            <PropertyRef Name="codePostal" />
+            <PropertyRef Name="adrLigne1" />
+            <PropertyRef Name="prenom" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="6" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mail" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="motdepasse" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idPays" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="etat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codePostal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adrLigne2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="adrLigne1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="HotelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vAbonne" EntityType="Self.vAbonne" />
+          <EntitySet Name="vHotel" EntityType="Self.vHotel" />
+          <EntitySet Name="vHotelier" EntityType="Self.vHotelier" />
+          <FunctionImport Name="Abonne_Insert" ReturnType="Collection(Decimal)">
+            <Parameter Name="pseudo" Mode="In" Type="String" />
+            <Parameter Name="motdepasse" Mode="In" Type="String" />
+            <Parameter Name="mail" Mode="In" Type="String" />
+            <Parameter Name="nom" Mode="In" Type="String" />
+            <Parameter Name="prenom" Mode="In" Type="String" />
+            <Parameter Name="adrLigne1" Mode="In" Type="String" />
+            <Parameter Name="adrLigne2" Mode="In" Type="String" />
+            <Parameter Name="codePostal" Mode="In" Type="String" />
+            <Parameter Name="ville" Mode="In" Type="String" />
+            <Parameter Name="etat" Mode="In" Type="String" />
+            <Parameter Name="idPays" Mode="In" Type="Decimal" />
+            <Parameter Name="latitude" Mode="In" Type="Single" />
+            <Parameter Name="longitude" Mode="In" Type="Single" />
+            <Parameter Name="indicatif" Mode="In" Type="Decimal" />
+            <Parameter Name="telephone" Mode="In" Type="String" />
+            <Parameter Name="aeroport" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Hotel_Insert" ReturnType="Collection(Decimal)">
+            <Parameter Name="idPrix" Mode="In" Type="Decimal" />
+            <Parameter Name="idHotelier" Mode="In" Type="Decimal" />
+            <Parameter Name="nom" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="adrLigne1" Mode="In" Type="String" />
+            <Parameter Name="adrLigne2" Mode="In" Type="String" />
+            <Parameter Name="etat" Mode="In" Type="String" />
+            <Parameter Name="ville" Mode="In" Type="String" />
+            <Parameter Name="codePostal" Mode="In" Type="String" />
+            <Parameter Name="idPays" Mode="In" Type="Decimal" />
+            <Parameter Name="latitude" Mode="In" Type="Single" />
+            <Parameter Name="indicatif" Mode="In" Type="Decimal" />
+            <Parameter Name="longitude" Mode="In" Type="Single" />
+            <Parameter Name="nbEtoiles" Mode="In" Type="Decimal" />
+            <Parameter Name="telephone" Mode="In" Type="String" />
+            <Parameter Name="mail" Mode="In" Type="String" />
+            <Parameter Name="siteWeb" Mode="In" Type="String" />
+            <Parameter Name="nbChambres" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Hotel_Update">
+            <Parameter Name="id" Mode="In" Type="Decimal" />
+            <Parameter Name="idPrix" Mode="In" Type="Decimal" />
+            <Parameter Name="idHotelier" Mode="In" Type="Decimal" />
+            <Parameter Name="nom" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="adrLigne1" Mode="In" Type="String" />
+            <Parameter Name="adrLigne2" Mode="In" Type="String" />
+            <Parameter Name="etat" Mode="In" Type="String" />
+            <Parameter Name="ville" Mode="In" Type="String" />
+            <Parameter Name="codePostal" Mode="In" Type="String" />
+            <Parameter Name="idPays" Mode="In" Type="Decimal" />
+            <Parameter Name="latitude" Mode="In" Type="Single" />
+            <Parameter Name="indicatif" Mode="In" Type="Decimal" />
+            <Parameter Name="longitude" Mode="In" Type="Single" />
+            <Parameter Name="nbEtoiles" Mode="In" Type="Decimal" />
+            <Parameter Name="telephone" Mode="In" Type="String" />
+            <Parameter Name="mail" Mode="In" Type="String" />
+            <Parameter Name="siteWeb" Mode="In" Type="String" />
+            <Parameter Name="nbChambres" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Hotelier_Insert" ReturnType="Collection(Decimal)">
+            <Parameter Name="mail" Mode="In" Type="String" />
+            <Parameter Name="motdepasse" Mode="In" Type="String" />
+            <Parameter Name="nom" Mode="In" Type="String" />
+            <Parameter Name="idPays" Mode="In" Type="Decimal" />
+            <Parameter Name="etat" Mode="In" Type="String" />
+            <Parameter Name="ville" Mode="In" Type="String" />
+            <Parameter Name="codePostal" Mode="In" Type="String" />
+            <Parameter Name="adrLigne2" Mode="In" Type="String" />
+            <Parameter Name="adrLigne1" Mode="In" Type="String" />
+            <Parameter Name="prenom" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Hotelier_Update">
+            <Parameter Name="id" Mode="In" Type="Decimal" />
+            <Parameter Name="mail" Mode="In" Type="String" />
+            <Parameter Name="motdepasse" Mode="In" Type="String" />
+            <Parameter Name="nom" Mode="In" Type="String" />
+            <Parameter Name="idPays" Mode="In" Type="Decimal" />
+            <Parameter Name="etat" Mode="In" Type="String" />
+            <Parameter Name="ville" Mode="In" Type="String" />
+            <Parameter Name="codePostal" Mode="In" Type="String" />
+            <Parameter Name="adrLigne2" Mode="In" Type="String" />
+            <Parameter Name="adrLigne1" Mode="In" Type="String" />
+            <Parameter Name="prenom" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HotelModelStoreContainer" CdmEntityContainer="HotelEntities">
+          <EntitySetMapping Name="vAbonne">
+            <EntityTypeMapping TypeName="HotelModel.vAbonne">
+              <MappingFragment StoreEntitySet="vAbonne">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pseudo" ColumnName="pseudo" />
+                <ScalarProperty Name="motdepasse" ColumnName="motdepasse" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="adrLigne1" ColumnName="adrLigne1" />
+                <ScalarProperty Name="adrLigne2" ColumnName="adrLigne2" />
+                <ScalarProperty Name="codePostal" ColumnName="codePostal" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="etat" ColumnName="etat" />
+                <ScalarProperty Name="idPays" ColumnName="idPays" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="indicatif" ColumnName="indicatif" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="aeroport" ColumnName="aeroport" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="HotelModel.vAbonne">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="HotelModel.Store.Abonne_Insert">
+                  <ScalarProperty Name="aeroport" ParameterName="aeroport" />
+                  <ScalarProperty Name="telephone" ParameterName="telephone" />
+                  <ScalarProperty Name="indicatif" ParameterName="indicatif" />
+                  <ScalarProperty Name="longitude" ParameterName="longitude" />
+                  <ScalarProperty Name="latitude" ParameterName="latitude" />
+                  <ScalarProperty Name="idPays" ParameterName="idPays" />
+                  <ScalarProperty Name="etat" ParameterName="etat" />
+                  <ScalarProperty Name="ville" ParameterName="ville" />
+                  <ScalarProperty Name="codePostal" ParameterName="codePostal" />
+                  <ScalarProperty Name="adrLigne2" ParameterName="adrLigne2" />
+                  <ScalarProperty Name="adrLigne1" ParameterName="adrLigne1" />
+                  <ScalarProperty Name="prenom" ParameterName="prenom" />
+                  <ScalarProperty Name="nom" ParameterName="nom" />
+                  <ScalarProperty Name="mail" ParameterName="mail" />
+                  <ScalarProperty Name="motdepasse" ParameterName="motdepasse" />
+                  <ScalarProperty Name="pseudo" ParameterName="pseudo" />
+                  <ResultBinding Name="id" ColumnName="id" />
+                </InsertFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vHotel">
+            <EntityTypeMapping TypeName="HotelModel.vHotel">
+              <MappingFragment StoreEntitySet="vHotel">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idPrix" ColumnName="idPrix" />
+                <ScalarProperty Name="idHotelier" ColumnName="idHotelier" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="adrLigne1" ColumnName="adrLigne1" />
+                <ScalarProperty Name="adrLigne2" ColumnName="adrLigne2" />
+                <ScalarProperty Name="etat" ColumnName="etat" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="codePostal" ColumnName="codePostal" />
+                <ScalarProperty Name="idPays" ColumnName="idPays" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="indicatif" ColumnName="indicatif" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="nbEtoiles" ColumnName="nbEtoiles" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="siteWeb" ColumnName="siteWeb" />
+                <ScalarProperty Name="nbChambres" ColumnName="nbChambres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="HotelModel.vHotel">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="HotelModel.Store.Hotel_Insert">
+                  <ScalarProperty Name="nbChambres" ParameterName="nbChambres" />
+                  <ScalarProperty Name="siteWeb" ParameterName="siteWeb" />
+                  <ScalarProperty Name="mail" ParameterName="mail" />
+                  <ScalarProperty Name="telephone" ParameterName="telephone" />
+                  <ScalarProperty Name="nbEtoiles" ParameterName="nbEtoiles" />
+                  <ScalarProperty Name="longitude" ParameterName="longitude" />
+                  <ScalarProperty Name="indicatif" ParameterName="indicatif" />
+                  <ScalarProperty Name="latitude" ParameterName="latitude" />
+                  <ScalarProperty Name="idPays" ParameterName="idPays" />
+                  <ScalarProperty Name="codePostal" ParameterName="codePostal" />
+                  <ScalarProperty Name="ville" ParameterName="ville" />
+                  <ScalarProperty Name="etat" ParameterName="etat" />
+                  <ScalarProperty Name="adrLigne2" ParameterName="adrLigne2" />
+                  <ScalarProperty Name="adrLigne1" ParameterName="adrLigne1" />
+                  <ScalarProperty Name="description" ParameterName="description" />
+                  <ScalarProperty Name="nom" ParameterName="nom" />
+                  <ScalarProperty Name="idHotelier" ParameterName="idHotelier" />
+                  <ScalarProperty Name="idPrix" ParameterName="idPrix" />
+                  <ResultBinding Name="id" ColumnName="id" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="HotelModel.Store.Hotel_Update">
+                  <ScalarProperty Name="nbChambres" ParameterName="nbChambres" Version="Current" />
+                  <ScalarProperty Name="siteWeb" ParameterName="siteWeb" Version="Current" />
+                  <ScalarProperty Name="mail" ParameterName="mail" Version="Current" />
+                  <ScalarProperty Name="telephone" ParameterName="telephone" Version="Current" />
+                  <ScalarProperty Name="nbEtoiles" ParameterName="nbEtoiles" Version="Current" />
+                  <ScalarProperty Name="longitude" ParameterName="longitude" Version="Current" />
+                  <ScalarProperty Name="indicatif" ParameterName="indicatif" Version="Current" />
+                  <ScalarProperty Name="latitude" ParameterName="latitude" Version="Current" />
+                  <ScalarProperty Name="idPays" ParameterName="idPays" Version="Current" />
+                  <ScalarProperty Name="codePostal" ParameterName="codePostal" Version="Current" />
+                  <ScalarProperty Name="ville" ParameterName="ville" Version="Current" />
+                  <ScalarProperty Name="etat" ParameterName="etat" Version="Current" />
+                  <ScalarProperty Name="adrLigne2" ParameterName="adrLigne2" Version="Current" />
+                  <ScalarProperty Name="adrLigne1" ParameterName="adrLigne1" Version="Current" />
+                  <ScalarProperty Name="description" ParameterName="description" Version="Current" />
+                  <ScalarProperty Name="nom" ParameterName="nom" Version="Current" />
+                  <ScalarProperty Name="idHotelier" ParameterName="idHotelier" Version="Current" />
+                  <ScalarProperty Name="idPrix" ParameterName="idPrix" Version="Current" />
+                  <ScalarProperty Name="id" ParameterName="id" Version="Current" />
+                </UpdateFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vHotelier">
+            <EntityTypeMapping TypeName="HotelModel.vHotelier">
+              <MappingFragment StoreEntitySet="vHotelier">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="motdepasse" ColumnName="motdepasse" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="idPays" ColumnName="idPays" />
+                <ScalarProperty Name="etat" ColumnName="etat" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="codePostal" ColumnName="codePostal" />
+                <ScalarProperty Name="adrLigne2" ColumnName="adrLigne2" />
+                <ScalarProperty Name="adrLigne1" ColumnName="adrLigne1" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="HotelModel.vHotelier">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="HotelModel.Store.Hotelier_Insert">
+                  <ScalarProperty Name="prenom" ParameterName="prenom" />
+                  <ScalarProperty Name="adrLigne1" ParameterName="adrLigne1" />
+                  <ScalarProperty Name="adrLigne2" ParameterName="adrLigne2" />
+                  <ScalarProperty Name="codePostal" ParameterName="codePostal" />
+                  <ScalarProperty Name="ville" ParameterName="ville" />
+                  <ScalarProperty Name="etat" ParameterName="etat" />
+                  <ScalarProperty Name="idPays" ParameterName="idPays" />
+                  <ScalarProperty Name="nom" ParameterName="nom" />
+                  <ScalarProperty Name="motdepasse" ParameterName="motdepasse" />
+                  <ScalarProperty Name="mail" ParameterName="mail" />
+                  <ResultBinding Name="id" ColumnName="id" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="HotelModel.Store.Hotelier_Update">
+                  <ScalarProperty Name="prenom" ParameterName="prenom" Version="Current" />
+                  <ScalarProperty Name="adrLigne1" ParameterName="adrLigne1" Version="Current" />
+                  <ScalarProperty Name="adrLigne2" ParameterName="adrLigne2" Version="Current" />
+                  <ScalarProperty Name="codePostal" ParameterName="codePostal" Version="Current" />
+                  <ScalarProperty Name="ville" ParameterName="ville" Version="Current" />
+                  <ScalarProperty Name="etat" ParameterName="etat" Version="Current" />
+                  <ScalarProperty Name="idPays" ParameterName="idPays" Version="Current" />
+                  <ScalarProperty Name="nom" ParameterName="nom" Version="Current" />
+                  <ScalarProperty Name="motdepasse" ParameterName="motdepasse" Version="Current" />
+                  <ScalarProperty Name="mail" ParameterName="mail" Version="Current" />
+                  <ScalarProperty Name="id" ParameterName="id" Version="Current" />
+                </UpdateFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Abonne_Insert" FunctionName="HotelModel.Store.Abonne_Insert" />
+          <FunctionImportMapping FunctionImportName="Hotel_Insert" FunctionName="HotelModel.Store.Hotel_Insert" />
+          <FunctionImportMapping FunctionImportName="Hotel_Update" FunctionName="HotelModel.Store.Hotel_Update" />
+          <FunctionImportMapping FunctionImportName="Hotelier_Insert" FunctionName="HotelModel.Store.Hotelier_Insert" />
+          <FunctionImportMapping FunctionImportName="Hotelier_Update" FunctionName="HotelModel.Store.Hotelier_Update" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
