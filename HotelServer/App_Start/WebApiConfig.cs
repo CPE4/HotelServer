@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web.Http;
+using Microsoft.Owin.Security.OAuth;
+using Newtonsoft.Json.Serialization;
 
 namespace HotelServer
 {
@@ -9,7 +12,10 @@ namespace HotelServer
     {
         public static void Register(HttpConfiguration config)
         {
-            // Configuration et services API Web
+            // Configuration et services de l'API Web
+            // Configurer l'API Web pour utiliser uniquement l'authentification de jeton du porteur.
+            config.SuppressDefaultHostAuthentication();
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
             // Itinéraires de l'API Web
             config.MapHttpAttributeRoutes();
