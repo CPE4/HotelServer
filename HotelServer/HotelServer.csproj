@@ -154,6 +154,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AbonnesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HoteliersController.cs" />
     <Compile Include="Controllers\PaysController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -173,6 +174,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Abonne.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Hotelier.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hotelier.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hotelier.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hotelier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hotelier.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hotelier.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Pays.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +206,9 @@
     </Compile>
     <Compile Include="Models\vAbonne.cs">
       <DependentUpon>Abonne.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vHotelier.cs">
+      <DependentUpon>Hotelier.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vPays.cs">
       <DependentUpon>Pays.tt</DependentUpon>
@@ -257,6 +276,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Pays.edmx</DependentUpon>
       <LastGenOutput>Pays.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\Hotelier.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Hotelier.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Hotelier.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Hotelier.edmx</DependentUpon>
+      <LastGenOutput>Hotelier.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Hotelier.edmx.diagram">
+      <DependentUpon>Hotelier.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Hotelier.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Hotelier.edmx</DependentUpon>
+      <LastGenOutput>Hotelier.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
