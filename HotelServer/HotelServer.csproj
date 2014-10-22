@@ -154,6 +154,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AbonnesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PaysController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,8 +173,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Abonne.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Pays.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pays.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pays.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pays.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pays.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pays.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\vAbonne.cs">
       <DependentUpon>Abonne.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vPays.cs">
+      <DependentUpon>Pays.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -221,6 +240,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Abonne.edmx</DependentUpon>
       <LastGenOutput>Abonne.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\Pays.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Pays.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Pays.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pays.edmx</DependentUpon>
+      <LastGenOutput>Pays.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Pays.edmx.diagram">
+      <DependentUpon>Pays.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Pays.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pays.edmx</DependentUpon>
+      <LastGenOutput>Pays.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
